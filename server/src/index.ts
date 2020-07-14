@@ -27,7 +27,7 @@ app.use(async (ctx) => {
   await redis.lock("name");
   setInterval(() => {
     redis.unlock("name");
-  }, 10000);
+  }, 7000);
   const result = await redis.get("name");
   console.log(result);
   ctx.body = "Hello World";
