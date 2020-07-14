@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+    app:
+        build: ./server
+        ports:
+            - 3456:3000
+        volumes:
+            - node_modules
+            - ./server:/app
+    redis:
+        image: redis:latest
